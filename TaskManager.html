@@ -7,37 +7,47 @@
     <title>Менеджер задач</title>
 </head>
 <body>
-    <div id="app">
-        <div class="header">
-            <h1>Менеджер задач</h1>
+    <div class="content">
+        <div class="center-container">
+            <h1 class="header-text">Менеджер задач</h1>
         </div>
-        <div class="main">
-            <div class="tasks" id="active-tasks-container">
-                <h2>Активные задачи</h2>
-                <ul id="active-tasks"></ul>
+        <div class="center-container">
+            <div class="flex-column-container input-element">
+                <div class="main">
+                    <div class="tasks" id="active-tasks-container">
+                        <h2>Активные задачи</h2>
+                        <ul id="active-tasks"></ul>
+                    </div>
+                    <div class="tasks" id="completed-tasks-container">
+                        <h2>Завершенные задачи</h2>
+                        <ul id="completed-tasks"></ul>
+                    </div>
+                    <div class="tasks" id="deleted-tasks-container">
+                        <h2>Удаленные задачи</h2>
+                        <ul id="deleted-tasks"></ul>
+                    </div>
+                </div>
             </div>
-            <div class="tasks" id="completed-tasks-container">
-                <h2>Завершенные задачи</h2>
-                <ul id="completed-tasks"></ul>
-            </div>
-            <div class="tasks" id="deleted-tasks-container">
-                <h2>Удаленные задачи</h2>
-                <ul id="deleted-tasks"></ul>
-            </div>
-        </div>
-        <div class="footer">
-            <input type="text" id="new-task" placeholder="Добавить новую задачу...">
-            <button onclick="addTask()">Добавить задачу</button>
-            <div class="toggle-container">
-                <label for="task-type">Задачи:</label>
-                <select id="task-type" onchange="loadTasks(this.value)">
-                    <option value="active-tasks-container">Активные</option>
-                    <option value="completed-tasks-container">Завершенные</option>
-                    <option value="deleted-tasks-container">Удаленные</option>
-                </select>
+        </div>   
+        <div class="center-container">
+            <div class="flex-row-container element-generic-style input-element">
+                <input type="text" id="new-task" placeholder="Добавить новую задачу...">
+                <button id="add" onclick="addTask()">Добавить задачу</button>
             </div>
         </div>
+        <div class="toggle-container">
+                    <label for="task-type">Задачи:</label>
+                    <select id="task-type" onchange="loadTasks(this.value)">
+                        <option value="active-tasks-container">Активные</option>
+                        <option value="completed-tasks-container">Завершенные</option>
+                        <option value="deleted-tasks-container">Удаленные</option>
+                    </select>
+        </div>  
     </div>
+    <footer class="footer">
+        <hr>
+        <p>&copy; Все права защищены.</p>
+    </footer>
     <script src="script.js"></script>
 </body>
-</html
+</html>
